@@ -20,7 +20,12 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-#a2_w+db_r_=994fd#!a=#*ur4
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
 
-ALLOWED_HOSTS = ['.render.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'personalportfolio-website.onrender.com',
+    'www.personalportfolio-website.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
