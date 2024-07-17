@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clement Mabila</title>
+    <link href="{% static '/css/main.css'%}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-2 d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-header">
+                        <img src="{% static 'images/plash.jpg' %}" alt="Profile Picture" class="profile-img">
+                        <h4>Clement Mabila</h4>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#contact-details">
+                                <i class="fa-solid fa-address-book"></i> Main page
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/resume/' %}active{% endif %}" href="{% url 'resume' %}">
+                                <i class="fa-solid fa-file-alt"></i> Resume
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/academic-record/' %}active{% endif %}" href="{% url 'academic_record' %}">
+                                <i class="fa-solid fa-graduation-cap"></i> Academic Record
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/projects/' %}active{% endif %}" href="{% url 'projects' %}">
+                                <i class="fa-solid fa-project-diagram"></i> Projects
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <main role="main" class="col-md-10 ml-sm-auto px-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-body border-info" id="profile-wrapper">
+                            <img id="profile" src="{% static 'images/profilee.jpeg' %}">
+                            <hr>
+                            <p>A dedicated web and software developer with a strong focus on creating efficient and user-centric web applications and software.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card card-body border-info">
+                            <p>I am a dedicated and proficient developer with a diploma in Computer Science from Tshwane University of Technology, 
+                                where I excelled by passing all my modules on the first attempt. My academic journey has equipped me with a solid foundation in computer science principles and a keen understanding of software development practices.</p>
+                                
+                            <p>I am proficient in several programming languages, <b>including Python, Java, JavaScript, C++, and HTML/CSS,</b> which I have used to develop a variety of projects ranging from web applications to complex software solutions.</p>
+                            <p>My expertise in these languages allows me to adapt quickly to new technologies and deliver high-quality, efficient code.</p>
+                        
+                            <ul class="social-links">
+                                <li><a href="https://wa.me/0729048720" target="_blank"><img class="social" src="{% static 'images/whatsapp.png' %}"></a></li>
+                                <li><a href="https://www.linkedin.com/in/clement-mabila-5707162b3" target="_blank"><img class="social" src="{% static 'images/linkedin.png' %}"></a></li>
+                                <li><a href="https://twitter.com/@ClementXen" target="_blank"><img class="social" src="{% static 'images/twitter.png' %}"></a></li>
+                                <li><a href="https://www.youtube.com/ZenethXen" target="_blank"><img class="social" src="{% static 'images/youtube.png' %}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="contact-details" class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="card card-body">
+                            <h5>Resume</h5>
+                            <p>Download my resume to learn more about my professional background and skills.</p>
+                            <a href="{% static 'files/Clement_Mabila_Resume.pdf' %}" class="btn btn-primary" target="_blank">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-body">
+                            <h5>My Experience as a Developer</h5>
+                            <p>Full stack developer</p>
+                            <p>I have successfully designed and deployed various web applications as a sole developer, most notably a location-based service using Django and Google Maps API. My professional journey includes launching systems on online servers, enhancing user interfaces with Bootstrap for a refined user experience, and managing data integration seamlessly within applications.</p>
+                            <p>Developer of a system locating and supporting thousands of customers with locally available garages, including fuel prices. The system includes an admin site to maintain and manage the data through a SQL Database.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-body text-center">
+                            <h5>Programming Languages I Know</h5>
+                            <div class="icon-container">
+                                <i class="fa-brands fa-python icon-python"></i>
+                                <i class="fa-brands fa-java icon-java"></i>
+                                <i class="fa-brands fa-js icon-js"></i>
+                                <i class="fa-brands fa-html5 icon-html"></i>
+                                <i class="fa-brands fa-css3-alt icon-css"></i>
+                                <i class="fa-brands fa-php icon-php"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

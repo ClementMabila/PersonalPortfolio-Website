@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Clement Mabila</title>
+    <link href="{% static '/css/main.css'%}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-2 d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-header">
+                        <img src="{% static 'images/plash.jpg' %}" alt="Profile Picture" class="profile-img">
+                        <h4>Clement Mabila</h4>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">
+                                <i class="fa-solid fa-house"></i> Main page
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/resume/' %}active{% endif %}" href="{% url 'resume' %}">
+                                <i class="fa-solid fa-file-alt"></i> Resume
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/academic-record/' %}active{% endif %}" href="{% url 'academic_record' %}">
+                                <i class="fa-solid fa-graduation-cap"></i> Academic Record
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/projects/' %}active{% endif %}" href="{% url 'projects' %}">
+                                <i class="fa-solid fa-project-diagram"></i> Projects
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <main role="main" class="col-md-10 ml-sm-auto px-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-body border-info">
+                            <h2>Projects</h2>
+                            <p>Here are some of the projects I have worked on:</p>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <h5 class="mb-1">Project 1</h5>
+                                    <p class="mb-1">Description of Project 1.</p>
+                                    <small>Technologies used: Django, Google Maps API</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <h5 class="mb-1">Project 2</h5>
+                                    <p class="mb-1">Description of Project 2.</p>
+                                    <small>Technologies used: Python, JavaScript</small>
+                                </a>
+                                <!-- Add more projects as needed -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
