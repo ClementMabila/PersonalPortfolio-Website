@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn myproject.wsgi"
+    startCommand: "gunicorn myportfolio.wsgi:application"
     envVars:
       - key: postgresql://aa_qd20_user:2OfwITtcQbfeVoO6ydEWeQ9QRW07uI1x@dpg-cqbogg8gph6c73c3uftg-a.oregon-postgres.render.com/aa_qd20
         fromDatabase:
