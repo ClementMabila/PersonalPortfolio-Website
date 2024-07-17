@@ -104,13 +104,14 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / "static",  # Use / operator to concatenate paths
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+# Define STATIC_ROOT and MEDIA_ROOT with Path object
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Define the storage backend for static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
