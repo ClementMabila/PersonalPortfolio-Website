@@ -73,7 +73,10 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 # Database
 # settings.py
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
