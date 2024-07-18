@@ -3,7 +3,9 @@ services:
     name: my-django-app
     env: python
     plan: free
-    buildCommand: ./build.sh
+    buildCommand:
+      - pip install -r requirements.txt
+      - python manage.py collectstatic --noinput
     startCommand: "gunicorn myportfolio.wsgi:application"
     envVars:
       - key: postgresql://aa_qd20_user:2OfwITtcQbfeVoO6ydEWeQ9QRW07uI1x@dpg-cqbogg8gph6c73c3uftg-a.oregon-postgres.render.com/aa_qd20
