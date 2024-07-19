@@ -16,15 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-#a2_w+db_r_=994fd#!a=#*ur4ud8vw#f@*-n=2y()4c+25qtk')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
+DEBUG = True
 
 
-ALLOWED_HOSTS = [
-    'personalportfolio-website.onrender.com',
-    'www.personalportfolio-website.onrender.com',
-    'localhost',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -73,9 +68,11 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 # Database
 # settings.py
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
